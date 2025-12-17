@@ -19,6 +19,7 @@ export class CategoriaController {
 
   @Get()
   @HttpCode(HttpStatus.OK)
+  findAll(): Promise<Categoria[]> {
     return this.categoriaService.findAll();
   }
 
