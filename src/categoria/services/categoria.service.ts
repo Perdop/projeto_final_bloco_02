@@ -28,6 +28,14 @@ export class CategoriaService {
     return categoria;
   }
 
+  async findAllByNome(nome: string): Promise<Categoria[]> {
+    return await this.categoriaRepository.find({
+      where: {
+        nome: ILike(`%${nome}%`),
+      },
+    });
+  }
+
   async findAllByDescricao(descricao: string): Promise<Categoria[]> {
     return await this.categoriaRepository.find({
       where: {
