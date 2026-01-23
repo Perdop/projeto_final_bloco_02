@@ -8,7 +8,7 @@ async function ensureDatabase() {
   const connection = await createConnection({
     host: 'localhost',
     user: 'root',
-    password: '1234',
+    password: 'root',
   });
 
   const sql = readFileSync('src/sql/create-database.sql').toString();
